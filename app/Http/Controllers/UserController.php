@@ -64,5 +64,13 @@ class UserController extends Controller
         $user->save();
         return response()->json($user, 201);
     }
+    public function destroy($id)//DELETE
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return response()->json($user, 204);
+
+    }
 
 }
